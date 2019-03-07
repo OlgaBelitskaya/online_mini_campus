@@ -19,3 +19,5 @@
 ## [PART 6](https://olgabelitskaya.github.io/sage6.html)
 
 ## [PART 7](https://olgabelitskaya.github.io/sage7.html)
+
+## [PART 8](https://olgabelitskaya.github.io/sage8.html)
