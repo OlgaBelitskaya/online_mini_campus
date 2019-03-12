@@ -29,3 +29,7 @@
 ## [PART 11](https://olgabelitskaya.github.io/sage11.html)
 
 ## [PART 12](https://olgabelitskaya.github.io/sage12.html)
+
+## [PART 13](https://olgabelitskaya.github.io/sage13.html)
+
+## [PART 14](https://olgabelitskaya.github.io/sage14.html)
