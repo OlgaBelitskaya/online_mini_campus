@@ -37,3 +37,7 @@
 ## [PART 15](https://olgabelitskaya.github.io/sage15.html)
 
 ## [PART 16](https://olgabelitskaya.github.io/sage16.html)
+
+## [PART 17](https://olgabelitskaya.github.io/sage17.html)
+
+## [PART 18](https://olgabelitskaya.github.io/sage18.html)
