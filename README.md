@@ -49,3 +49,7 @@
 ## [PART 21](https://olgabelitskaya.github.io/sage21.html)
 
 ## [PART 22](https://olgabelitskaya.github.io/sage22.html)
+
+## [PART 23](https://olgabelitskaya.github.io/sage23.html)
+
+## [PART 24](https://olgabelitskaya.github.io/sage24.html)
