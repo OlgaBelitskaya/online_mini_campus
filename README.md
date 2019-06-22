@@ -4,9 +4,10 @@
 
 <a href="https://www.instagram.com/olga.belitskaya/" style="font-size:120%;">&#x1F300; &nbsp; Instagram Posts</a> &nbsp; &nbsp; &nbsp; <a href="https://www.pinterest.ru/olga_belitskaya/code-style/" style="font-size:120%;">&#x1F300; &nbsp; Pinterest Posts</a>
 
-# &#x1F4D1; &nbsp; SageMath Practice
+# &#x1F4D1; &nbsp; SageMath Practice with Wolfram "Translation"
 
-## [PART 1](https://olgabelitskaya.github.io/sage.html)
+## [SageMath PART 1](https://olgabelitskaya.github.io/sage.html)
+## &#x1F4D3; &nbsp; [Wolfram NB Part 1](https://www.wolframcloud.com/obj/safuolga/Published/wolfram.nb)
 
 ## [PART 2](https://olgabelitskaya.github.io/sage2.html)
 
