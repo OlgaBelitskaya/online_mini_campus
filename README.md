@@ -30,7 +30,9 @@
 ## [SageMath PART 8](https://olgabelitskaya.github.io/sage8.html)
 ## &#x1F4D3; &nbsp; [Wolfram NB Part 8](https://www.wolframcloud.com/obj/safuolga/Published/wolfram8.nb)
 
-## [PART 9](https://olgabelitskaya.github.io/sage9.html)
+## [SageMath PART 9](https://olgabelitskaya.github.io/sage9.html)
+## &#x1F4D3; &nbsp; [Wolfram NB Part 9](https://www.wolframcloud.com/obj/safuolga/Published/wolfram9.nb)
+
 
 ## [PART 10](https://olgabelitskaya.github.io/sage10.html)
 
