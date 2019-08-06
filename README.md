@@ -51,7 +51,8 @@
 ## [SageMath PART 15](https://olgabelitskaya.github.io/sage15.html)
 ## &#x1F4D3; &nbsp; [Wolfram NB Part 15](https://www.wolframcloud.com/obj/safuolga/Published/wolfram15.nb)
 
-## [PART 16](https://olgabelitskaya.github.io/sage16.html)
+## [SageMath PART 16](https://olgabelitskaya.github.io/sage16.html)
+## &#x1F4D3; &nbsp; [Wolfram NB Part 16](https://www.wolframcloud.com/obj/safuolga/Published/wolfram16.nb)
 
 ## [PART 17](https://olgabelitskaya.github.io/sage17.html)
 
