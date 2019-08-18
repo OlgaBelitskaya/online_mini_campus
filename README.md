@@ -63,12 +63,13 @@
 ## [SageMath PART 19](https://olgabelitskaya.github.io/sage19.html)
 ## &#x1F4D3; &nbsp; [Wolfram NB Part 19](https://www.wolframcloud.com/obj/safuolga/Published/wolfram19.nb)
 
-## [PART 20](https://olgabelitskaya.github.io/sage20.html)
+## [SageMath PART 20](https://olgabelitskaya.github.io/sage20.html)
+## &#x1F4D3; &nbsp; [Wolfram NB Part 20](https://www.wolframcloud.com/obj/safuolga/Published/wolfram20.nb)
 
-## [PART 21](https://olgabelitskaya.github.io/sage21.html)
+## [SageMath PART 21](https://olgabelitskaya.github.io/sage21.html)
 
-## [PART 22](https://olgabelitskaya.github.io/sage22.html)
+## [SageMath PART 22](https://olgabelitskaya.github.io/sage22.html)
 
-## [PART 23](https://olgabelitskaya.github.io/sage23.html)
+## [SageMath PART 23](https://olgabelitskaya.github.io/sage23.html)
 
-## [PART 24](https://olgabelitskaya.github.io/sage24.html)
+## [SageMath PART 24](https://olgabelitskaya.github.io/sage24.html)
