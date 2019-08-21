@@ -67,6 +67,7 @@
 ## &#x1F4D3; &nbsp; [Wolfram NB Part 20](https://www.wolframcloud.com/obj/safuolga/Published/wolfram20.nb)
 
 ## [SageMath PART 21](https://olgabelitskaya.github.io/sage21.html)
+## &#x1F4D3; &nbsp; [Wolfram NB Part 21](https://www.wolframcloud.com/obj/safuolga/Published/wolfram21.nb)
 
 ## [SageMath PART 22](https://olgabelitskaya.github.io/sage22.html)
 
