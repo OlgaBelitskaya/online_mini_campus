@@ -70,7 +70,10 @@
 ## &#x1F4D3; &nbsp; [Wolfram NB Part 21](https://www.wolframcloud.com/obj/safuolga/Published/wolfram21.nb)
 
 ## [SageMath PART 22](https://olgabelitskaya.github.io/sage22.html)
+## &#x1F4D3; &nbsp; [Wolfram NB Part 22](https://www.wolframcloud.com/obj/safuolga/Published/wolfram22.nb)
 
 ## [SageMath PART 23](https://olgabelitskaya.github.io/sage23.html)
+## &#x1F4D3; &nbsp; [Wolfram NB Part 23](https://www.wolframcloud.com/obj/safuolga/Published/wolfram23.nb)
 
 ## [SageMath PART 24](https://olgabelitskaya.github.io/sage24.html)
+## &#x1F4D3; &nbsp; [Wolfram NB Part 24](https://www.wolframcloud.com/obj/safuolga/Published/wolfram24.nb)
