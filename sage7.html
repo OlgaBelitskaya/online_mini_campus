@@ -105,15 +105,17 @@ c(z,zp,ze)
            font-size:90%; text-shadow:3px 3px 3px #aaa;}
 .bar rect {fill:#3636ff; opacity:.5;}
 </style>
-<svg id='svg1' width='750' height='500' style='background-color:lavender;'/>
+<svg id='svg1' width='750' height='400' 
+     style='background-color:lavender;'/>
 <script src='https://d3js.org/d3.v4.min.js'/><script>
 var data=d3.range(3000).map(d3.randomBates(5)),
-    formatCount=d3.format(',.0f');
+    formatCount=d3.format(',.0f'),
+    tr='translate('+margin.left+','+margin.top+')';
 var svg=d3.select('#svg1');
     m=30,margin={top:m,right:m,bottom:m,left:m}, 
     width=+svg.attr('width')-margin.left-margin.right-2,
     height=+svg.attr('height')-margin.top-margin.bottom-2,
-    g=svg.append("g").attr("transform","translate("+margin.left+","+margin.top+")");
+    g=svg.append('g').attr('transform',tr);
 var x=d3.scaleLinear().rangeRound([0,width]);
 var bins=d3.histogram().domain(x.domain()).thresholds(x.ticks(30))(data);
 var y=d3.scaleLinear().domain([0,d3.max(bins,function(d){return d.length;})]).range([height,0]);
@@ -126,7 +128,7 @@ bar.append("text").attr("text-anchor","middle").text(function(d){return formatCo
 g.append("g").attr("class","axis axis--x").call(d3.axisBottom(x))
              .attr("transform", "translate(0," + height + ")"); 
 g.append('text').attr('y',5)
- .text('An Example of D3 Histograms');   
+ .text('An Example of D3 Histograms');  
 </script></div> 
   </body>
 </html>
