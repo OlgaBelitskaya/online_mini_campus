@@ -19,6 +19,7 @@
   .preactive {padding-left:2px; border:2px double slategray; 
        font-size:110%; text-shadow:2px 2px 2px #aaa} 
   p,a {color:darkblue; font-size:110%; text-shadow:3px 3px 3px #aaa;}
+  .sagecell_output {padding-bottom:2px;}
   .sagecell .CodeMirror-scroll {min-height:3em; max-height:60em; font-size:110%;}
   body (margin:5px 5px5px 25px}
   </style>  
@@ -92,26 +93,29 @@ p.show(figsize=(7,5),legend_fancybox=True,
   <h2>Python Modules</h2>
 <div class='compute'><script type='text/x-sage'>
 %matplotlib inline
-import pylab,numpy
-columns=['Fresh','Milk','Grocery',
-         'Frozen','Detergents_Paper','Delicatessen']
+import pylab as pl,numpy as np
+columns=['Fresh','Milk','Grocery','Frozen',
+         'Detergents_Paper','Delicatessen']
 rows=['Customer 1','Customer 2','Customer 3']
-colors = ['#3636ff','#36ff36','#ff3636']
+colors=['#3636ff','#36ff36','#ff3636']
 data=[[26373,36423,22019,5154,4337,16523],
       [16165,4230,7595,201,4003,57],
       [14276,803,3045,485,100,518]]
-pylab.figure(figsize=(10,7))
-pylab.ylabel('Value'); pylab.xticks([]); 
-x=numpy.arange(len(columns))+0.2
-y=numpy.array([0.0]*len(columns))
-bar_width=0.5; cell_text=[]
+pl.figure(figsize=(10,5))
+pl.ylabel('value'); pl.xticks([])
+x=np.arange(len(columns))+.2
+y=np.array([0.]*len(columns))
+bar_width=.5; cell_text=[]
 for i in range(len(rows)):
-    pylab.bar(x,data[i],bar_width,bottom=y,color=colors[i])
-    y=y+data[i]; cell_text.append(['%1.0f'%(d)for d in data[i]])
-pylab.table(cellText=cell_text,rowLabels=rows,
-            rowColours=colors,colLabels=columns,loc='bottom')
-pylab.title('Samples of the Wholesale Customers Dataset')
-pylab.subplots_adjust(left=0.1,bottom=0.05);
+    pl.bar(x,data[i],bar_width,
+           bottom=y,color=colors[i])
+    y=y+data[i]
+    cell_text.append(['%1.0f'%(d)for d in data[i]])
+pl.table(cellText=cell_text,
+         rowLabels=rows,rowColours=colors,
+         colLabels=columns,loc='bottom')
+pl.title('Samples of the Wholesale Customers Dataset')
+pl.subplots_adjust(left=.1,bottom=.05);
 </script></div>
   <h2>Other Languages (R, HTML, ...)</h2>
 <div class='compute'><script type='text/x-sage'>
