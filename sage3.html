@@ -1,34 +1,48 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>SageMath_Part3</title>
-    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
-    <script>$(function (){
-    sagecell.makeSagecell({inputLocation:'#examplecell',template:sagecell.templates.minimal,evalButtonText:'Activate'});
-    sagecell.makeSagecell({inputLocation:'div.compute',evalButtonText:'Evaluate'});});
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width'>
+    <title>✒️SageMath_Part3</title>
+    <script src='https://sagecell.sagemath.org/static/embedded_sagecell.js'></script>
+    <script>$(function () {
+    sagecell.makeSagecell({inputLocation:'#cell1',evalButtonText:'activate',
+                           template:sagecell.templates.minimal});
+    sagecell.makeSagecell({inputLocation:'#cell2',evalButtonText:'activate again',
+                           autoeval:true});
+    sagecell.makeSagecell({inputLocation:'div.compute',evalButtonText:'evaluate'}); });
     </script>
-    <script data-ad-client="ca-pub-9200929962680356" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
   <style>
-  @import url('https://fonts.googleapis.com/css?family=Orbitron');
-  h1, h2 {color:#3636ff; font-family:'Orbitron'; text-shadow:5px 5px 5px #aaa;}
-  p, a {color:darkblue; font-size:120%; text-shadow:5px 5px 5px #aaa;}
-  .sagecell .CodeMirror-scroll {min-height:3em; max-height:60em;}
+  @import url('https://fonts.googleapis.com/css?family=Akronim');
+  h1,h2 {color:#3636ff; font-family:'Akronim'; text-shadow:3px 3px 3px #aaa;}
+  .preactive {padding-left:2px; border:2px double slategray; 
+       font-size:110%; text-shadow:2px 2px 2px #aaa} 
+  p,a {color:darkblue; font-size:110%; text-shadow:3px 3px 3px #aaa;}
+  .sagecell .CodeMirror-scroll {min-height:3em; max-height:60em; font-size:110%;}
+  body (margin:5px 5px5px 25px}
   </style>  
   <body>
   <h1>&#x1F4D1; &nbsp;SageMath Online Mini Campus. Part 3</h1>
-<a href="https://olgabelitskaya.github.io/README.html">&#x1F300; &nbsp; Home Page &nbsp; &nbsp;</a> 
-<a href="https://olgabelitskaya.github.io/sage2.html">&#x1F300; &nbsp; Previous &nbsp; &nbsp;</a>
-<a href="https://olgabelitskaya.github.io/sage4.html">&#x1F300; &nbsp; Next &nbsp; &nbsp;</a><br/>
-<a href="https://www.instagram.com/olga.belitskaya/">&#x1F300; &nbsp; Instagram Posts &nbsp; &nbsp;</a>     
-<a href="https://www.pinterest.ru/olga_belitskaya/code-style/">&#x1F300; &nbsp; Pinterest Posts</a>
+<a href='https://olgabelitskaya.github.io/README.html'>&#x1F300; &nbsp; Home Page &nbsp; &nbsp;</a> 
+<a href='https://olgabelitskaya.github.io/sage2.html'>&#x1F300; &nbsp; Next &nbsp; &nbsp;</a><br/>
+<a href='https://www.instagram.com/olga.belitskaya/'>&#x1F300; &nbsp; Instagram Posts &nbsp; &nbsp;</a>     
+<a href='https://www.pinterest.ru/olga_belitskaya/code-style/'>&#x1F300; &nbsp; Pinterest Posts</a>
     <p>The set of interactive pages with the following structure:</p>
-    <p>Example of Computations $\implies$ Your Field for Experiments $\implies$ Try Python Modules $\implies$ Try Other Languages</p>     
+    <p>Example of Computations $\mathbb{\implies}$ Your Experiments $\mathbb{\implies}$ 
+       Python Modules $\mathbb{\implies}$ Other Languages</p>
   <h2>Example of Computations</h2>
-    <p>Click the “Activate” button below to display an interactive example.</p>      
-<div id="examplecell"><script type="text/x-sage">
+    <p>Click the $\mathbb{activate}$ button below to display an interactive example.</p>
+<pre class='preactive'><code>
+@interact
+def _(N=(11,0,-1)):
+    var('t'); 
+    p=sum([polar_plot((.5*j+1)*sin(6*t)^2,(pi*i/6,pi*(i+1)/6),color=colormaps.jet(20*i)[:3]) 
+           for i in [0..N] for j in range(3)])
+    show(p,figsize=7,gridlines=True,ymin=-2,ymax=2,xmin=-2,xmax=2)
+
+</code></pre><br/>
+<div id='cell1'><script type='text/x-sage'>
 @interact
 def _(N=(11,0,-1)):
     var('t'); 
@@ -36,14 +50,15 @@ def _(N=(11,0,-1)):
            for i in [0..N] for j in range(3)])
     show(p,figsize=7,gridlines=True,ymin=-2,ymax=2,xmin=-2,xmax=2)
 </script></div>
-  <h2>Your Field for Experiments</h2>
-    <p>Type your own SageMath code lines below and click “Evaluate”.</p>   
-<div class="compute"><script type="text/x-sage">
+  <h2>Your Experiments</h2>
+    <p>Type your own SageMath code lines below and click the $\mathbb{evaluate}$ button.</p>
+<div class='compute'><script type='text/x-sage'>
 plot3d(lambda x,y: sin(x^5*y^2)+cos(x^4*y^3),(-pi,pi),(-pi,pi),
        color=[colormaps['terrain'](.1^2*i)[:3] for i in range(100)],
        adaptive=True,mesh=True,frame=False)
 </script></div><br/>
-<div class="compute"><script type="text/x-sage">
+  <p>This code cell was evaluated automatically.</p>
+<div id='cell2'><script type='text/x-sage'>
 @interact
 def _(N=(8,1,-1)):
     g=Graphics()
@@ -55,7 +70,7 @@ def _(N=(8,1,-1)):
                 plot_points=50,legend_label='$%s$'%latex(E))
     g.show(ymin=-30,ymax=30,figsize=(7,5))
 </script></div><br/>
-<div class="compute"><script type="text/x-sage">
+<div class='compute'><script type='text/x-sage'>
 var('x'); t=15
 f=cos(x); g=sqrt(x)*sin(x); h=cos(sqrt(x)*sin(x))
 fun=[f,f.diff(),g,g.diff(),h,h.diff()]
@@ -67,8 +82,8 @@ p=plot(fun,(0,t),color=c,thickness=2,fill='axis',
 p.show(legend_fancybox=True,legend_loc=3,
        legend_font_size=16,figsize=(8,5),gridlines=True)
 </script></div>     
-  <h2>Try Python Modules</h2>
-<div class="compute"><script type="text/x-sage">
+  <h2>Python Modules</h2>
+<div class='compute'><script type='text/x-sage'>
 %matplotlib inline
 import pylab,numpy
 columns=['Fresh','Milk','Grocery',
@@ -91,13 +106,14 @@ pylab.table(cellText=cell_text,rowLabels=rows,
 pylab.title('Samples of the Wholesale Customers Dataset')
 pylab.subplots_adjust(left=0.1,bottom=0.05);
 </script></div>
-  <h2>Try Other Languages (R, HTML, ...)</h2>
-<div class="compute"><script type="text/x-sage">
+  <h2>Other Languages (R, HTML, ...)</h2>
+<div class='compute'><script type='text/x-sage'>
 %%r
 file_list<-c('boom.pas','bloom.ppt','loom.pas',
              'bottom.pdf','bom.pps','boom.ppt')
 mask_list<-c('?oo*m.p*','b*o*om.p??','*o*om.p*?',
-             'b*om.p?*','*.*p*','bo*m.???','*om.*p*','*o*o*.p*?')
+             'b*om.p?*','*.*p*','bo*m.???',
+             '*om.*p*','*o*o*.p*?')
 mask_re_list<-c("^.oo.*m\\.p.*$","^b.*o.*om\\.p..$",
                 "^.*o.*om\\.p.*.$","^b.*om\\.p..*$",
                 "^.*\\..*p.*$","^bo.*m\\....$",
@@ -105,9 +121,8 @@ mask_re_list<-c("^.oo.*m\\.p.*$","^b.*o.*om\\.p..$",
 df<-data.frame(sapply(mask_re_list,grepl,file_list),
                row.names=file_list)
 colnames(df)<-mask_list; t(df)
-</script></div>
-    <p></p>
-<div class="compute"><script type="text/x-sage">
+</script></div><br/>
+<div class='compute'><script type='text/x-sage'>
 %%html
 $\begin{array}{c}
 G = \alpha * A * B^T \ + \ \beta * C^T * D \\
