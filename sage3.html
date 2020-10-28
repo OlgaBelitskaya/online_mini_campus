@@ -37,24 +37,31 @@
 @interact
 def _(N=(11,0,-1)):
     var('t'); 
-    p=sum([polar_plot((.5*j+1)*sin(6*t)^2,(pi*i/6,pi*(i+1)/6),color=colormaps.jet(20*i)[:3]) 
+    p=sum([polar_plot((.5*j+1)*sin(6*t)^2,
+                      (pi*i/6,pi*(i+1)/6),
+                      color=colormaps.jet(20*i)[:3]) 
            for i in [0..N] for j in range(3)])
-    show(p,figsize=7,gridlines=True,ymin=-2,ymax=2,xmin=-2,xmax=2)
+    show(p,figsize=7,gridlines=True,
+         ymin=-2,ymax=2,xmin=-2,xmax=2)
 
 </code></pre><br/>
 <div id='cell1'><script type='text/x-sage'>
 @interact
 def _(N=(11,0,-1)):
     var('t'); 
-    p=sum([polar_plot((.5*j+1)*sin(6*t)^2,(pi*i/6,pi*(i+1)/6),color=colormaps.jet(20*i)[:3]) 
+    p=sum([polar_plot((.5*j+1)*sin(6*t)^2,
+                      (pi*i/6,pi*(i+1)/6),
+                      color=colormaps.jet(20*i)[:3]) 
            for i in [0..N] for j in range(3)])
-    show(p,figsize=7,gridlines=True,ymin=-2,ymax=2,xmin=-2,xmax=2)
+    show(p,figsize=7,gridlines=True,
+         ymin=-2,ymax=2,xmin=-2,xmax=2)
 </script></div>
   <h2>Your Experiments</h2>
     <p>Type your own SageMath code lines below and click the $\mathbb{evaluate}$ button.</p>
 <div class='compute'><script type='text/x-sage'>
-plot3d(lambda x,y: sin(x^5*y^2)+cos(x^4*y^3),(-pi,pi),(-pi,pi),
-       color=[colormaps['terrain'](.1^2*i)[:3] for i in range(100)],
+f=lambda x,y: sin(.3+x^3*y^2)*exp(.4+x/pi)+cos(.5+x^2*y^3)
+c=[colormaps['terrain'](.1^2*i)[:3] for i in range(100)]
+plot3d(f,(-pi,pi),(-pi,pi),color=c,
        adaptive=True,mesh=True,frame=False)
 </script></div><br/>
   <p>This code cell was evaluated automatically.</p>
@@ -66,9 +73,9 @@ def _(N=(8,1,-1)):
         a1,a2,a3,a4,a6=i-5,i+5,i-1,i+1,i+3
         c=colormaps.jet(30*i)[:3]; 
         E=EllipticCurve([a1,a2,a3,a4,a6]);
-        g+=plot(E,gridlines=True,color=c,
-                plot_points=50,legend_label='$%s$'%latex(E))
-    g.show(ymin=-30,ymax=30,figsize=(7,5))
+        g+=plot(E,color=c,plot_points=50,
+                legend_label='$%s$'%latex(E))
+    g.show(gridlines=True,ymin=-30,ymax=30,figsize=(7,5))
 </script></div><br/>
 <div class='compute'><script type='text/x-sage'>
 var('x'); t=15
@@ -79,8 +86,8 @@ l=[r'$f$',r'$f \prime$',r'$g$',
    r'$g \prime$',r'$h$',r'$h \prime$']
 p=plot(fun,(0,t),color=c,thickness=2,fill='axis',
        fillcolor=c,fillalpha=0.1,legend_label=l)
-p.show(legend_fancybox=True,legend_loc=3,
-       legend_font_size=16,figsize=(8,5),gridlines=True)
+p.show(figsize=(7,5),legend_fancybox=True,
+       legend_loc=3,legend_font_size=16,gridlines=True)
 </script></div>     
   <h2>Python Modules</h2>
 <div class='compute'><script type='text/x-sage'>
@@ -114,17 +121,18 @@ file_list<-c('boom.pas','bloom.ppt','loom.pas',
 mask_list<-c('?oo*m.p*','b*o*om.p??','*o*om.p*?',
              'b*om.p?*','*.*p*','bo*m.???',
              '*om.*p*','*o*o*.p*?')
-mask_re_list<-c("^.oo.*m\\.p.*$","^b.*o.*om\\.p..$",
-                "^.*o.*om\\.p.*.$","^b.*om\\.p..*$",
-                "^.*\\..*p.*$","^bo.*m\\....$",
-                "^.*om\\..*p.*$","^.*o.*o.*\\.p.*.$")
+mask_re_list<-c('^.oo.*m\\.p.*$','^b.*o.*om\\.p..$',
+                '^.*o.*om\\.p.*.$','^b.*om\\.p..*$',
+                '^.*\\..*p.*$','^bo.*m\\....$',
+                '^.*om\\..*p.*$','^.*o.*o.*\\.p.*.$')
 df<-data.frame(sapply(mask_re_list,grepl,file_list),
                row.names=file_list)
 colnames(df)<-mask_list; t(df)
 </script></div><br/>
 <div class='compute'><script type='text/x-sage'>
 %%html
-$\begin{array}{c}
+<text style='color:#3636ff;'>
+$\mathscr{\begin{array}{c}
 G = \alpha * A * B^T \ + \ \beta * C^T * D \\
 \hline &\;&\;&\;&\;&\;&\; 
 \end{array} \\
@@ -141,7 +149,7 @@ D_{(2,4)} = \begin{pmatrix}
 \begin{array}{c}
 &\;&\;&\;&\;&\;&\;&\;&\;&\;&\;&\;&\;&\;&\; \\ 
 \hline
-G = ? \end{array}$
+G = ? \end{array}}$</text>
 </script></div> 
   </body>
 </html>
