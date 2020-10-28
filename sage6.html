@@ -79,27 +79,36 @@ def _(N=(210,0,-30)):
 </script></div><br/>
 <div class='compute'><script type='text/x-sage'>
 var('x,y,z'); 
-p1=implicit_plot3d(x^2/1^2-y^2/2^2,(x,-3,3),(y,-3,3),(z,-3,3),
-                   contour=0,color=(cos(x+y)*sin(z),colormaps.bwr))
-p2=implicit_plot3d(y^2-1^2,(x,-3,3),(y,-3,3),(z,-3,3),
-                   contour=0,opacity=0.7,color='#3636ff',frame=False)
-(p1+p2).show()
+p1=implicit_plot3d(
+    x^2/1^2-y^2/2^2,(x,-3,3),(y,-3,3),(z,-3,3),
+    contour=0,color=(cos(x+y)*sin(z),colormaps.bwr))
+p2=implicit_plot3d(
+    y^2-1^2,(x,-3,3),(y,-3,3),(z,-3,3),
+    contour=0,opacity=.7,color='#3636ff')
+(p1+p2).show(frame=False)
 </script></div>       
   <h2>Python Modules</h2>
 <div class='compute'><script type='text/x-sage'>
-import pylab,numpy; from mpl_toolkits.mplot3d import Axes3D
+import pylab,numpy
+from mpl_toolkits.mplot3d import Axes3D
 pylab.rcParams['grid.color']='steelblue'
 pylab.rcParams['grid.linestyle']='--'
-f=pylab.figure(figsize=(8,8)); ax=f.add_subplot(111,projection='3d')
+f=pylab.figure(figsize=(7,7))
+ax=f.add_subplot(111,projection='3d')
 X=numpy.linspace(-7,7,128); X,Y=numpy.meshgrid(X,X)
 Z1=1/2*X**2+1/8*Y**2; Z1[Z1>6]=numpy.nan;
-Z2=1/8*X**2-1/18*Y**2; Z2[Z2<-6]=numpy.nan; Z2[Z2>6]=numpy.nan;
-ax.plot_wireframe(X,Y,Z1,alpha=0.7,colors='#ff3636')
-ax.plot_wireframe(X,Y,Z2,alpha=0.4,colors='#3636ff')
-ax.text(2,7,7,r'$x^2/1^2+y^2/2^2=2 \cdot z$',color='#ff3636',fontsize=15)
-ax.text(-12,-7,-7,r'$x^2/2^2-y^2/3^2=2 \cdot z$',color='#3636ff',fontsize=15)
-ax.xaxis.pane.fill,ax.yaxis.pane.fill,ax.zaxis.pane.fill=False,False,False
-ax.set_xlim(-7,7); ax.set_ylim(-7,7); ax.set_zlim(-7,7); pylab.show()
+Z2=1/8*X**2-1/18*Y**2
+Z2[Z2<-6]=numpy.nan; Z2[Z2>6]=numpy.nan;
+ax.plot_wireframe(X,Y,Z1,alpha=.7,colors='#ff3636')
+ax.plot_wireframe(X,Y,Z2,alpha=.4,colors='#3636ff')
+l1=r'$\frac{x^2}{1^2}+\frac{y^2}{2^2}=2 \cdot z$'
+l2=r'$\frac{x^2}{2^2}-\frac{y^2}{3^2}=2 \cdot z$'
+ax.text(2,7,7,l1,color='#ff3636',fontsize=15)
+ax.text(-12,-7,-7,l2,color='#3636ff',fontsize=15)
+ax.xaxis.pane.fill,ax.yaxis.pane.fill,ax.zaxis.pane.fill=\
+False,False,False
+ax.set_xlim(-7,7); ax.set_ylim(-7,7); ax.set_zlim(-7,7)
+pylab.show()
 </script></div> 
   <h2>Other Languages (R, HTML, ...)</h2>
 <div class='compute'><script type='text/x-sage'>
