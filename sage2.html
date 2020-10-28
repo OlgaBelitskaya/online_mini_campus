@@ -119,17 +119,22 @@ g.show(figsize=[7,7],gridlines=True)
 </script></div>       
   <h2>Python Modules</h2>
 <div class='compute'><script type='text/x-sage'>
-%matplotlib inline
-import numpy,pylab,matplotlib.colors; from mpl_toolkits.mplot3d import Axes3D
-x,y,z=numpy.indices((13,13,13)); link=(x-6)**2+(y-5)**2+(z-6)**2==45
-f=pylab.figure(figsize=(14,14)); ax=f.gca(projection='3d')
-ax.voxels(link,facecolors=pylab.cm.bwr((x+y+x)*8),edgecolor='darkslategray')
-pylab.title('$(x-6)^2+(y-5)^2+(z-6)^2=45$'); pylab.axis(c='darkslategray')
+import numpy as np,pylab as pl 
+from mpl_toolkits.mplot3d import Axes3D
+x,y,z=np.indices((13,13,13))
+link=(x-6)**2+(y-5)**2+(z-6)**2==45
+f=pl.figure(figsize=(7,7))
+ax=f.gca(projection='3d')
+ax.voxels(link,facecolors=pl.cm.bwr((x+y+x)*8),
+          edgecolor='darkslategray')
+ti='$(x-6)^2+(y-5)^2+(z-6)^2=45}$'
+pl.title(ti,fontsize=14,color='#3636ff')
+pl.tight_layout(); pl.show()
 </script></div> 
   <h2>Other Languages (R, HTML, ...)</h2>
 <div class='compute'><script type='text/x-sage'>
 %%html
-<p>Calculation the number of symbols in string:</p>
+<p>Calculation the number of symbols in strings:</p>
 <p id='script_output'>evaluate the next code cell</p>
 </script></div><br/>
 <div class='compute'><script type='text/x-sage'>
@@ -137,7 +142,7 @@ pylab.title('$(x-6)^2+(y-5)^2+(z-6)^2=45$'); pylab.axis(c='darkslategray')
 function getInteger(min,max) {
     return Math.floor(Math.random()*(max-min+1))+min;};
 var string='@@@***морозИсолнцеДЕНЬчудестный***@@@'
-           +getInteger(1,Math.pow(10,5));
+           +getInteger(1,19);
 document.getElementById('script_output')
         .innerHTML=string+' - '+string.length+' symbols';
 </script></div><br/>
@@ -149,7 +154,7 @@ document.getElementById('script_output')
 .text3 {color:steelblue; font-size:200%; text-shadow:3px 3px 3px #ccc;}
 </style>
 <p class='text1'>&#x1F4D5; &nbsp; $\mathfrak {Choose \ your \ style!}$</p>
-<p class='text2'>&#x1F4D3; &nbsp; $\mathbb {Choose \ your \ style!}$</p>                                                                           
+<p class='text2'>&#x1F4D3; &nbsp; $\mathbb {Choose \ your \ style!}$</p>
 <p class='text3'>&#x1F4D8; &nbsp; $\mathscr {Choose \ your \ style!}$</p>
 </script></div> 
   </body>
