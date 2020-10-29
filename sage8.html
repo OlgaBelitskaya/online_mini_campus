@@ -40,7 +40,7 @@ def _(N=(1,7,1)):
                  marker='d',color=colormaps.hsv(i+10*j)[:3])
            for i in range(200) for j in [0..N-1]])
     p.show(xmin=-1.1,xmax=.1+N,ymin=-1,ymax=1,
-           gridlines=True,figsize=(8,5))
+           gridlines=True,figsize=(7,5))
 
 </code></pre><br/>
 <div id='cell1'><script type='text/x-sage'>
@@ -50,11 +50,11 @@ def _(N=(1,7,1)):
                  marker='d',color=colormaps.hsv(i+10*j)[:3])
            for i in range(200) for j in [0..N-1]])
     p.show(xmin=-1.1,xmax=.1+N,ymin=-1,ymax=1,
-           gridlines=True,figsize=(8,5))
+           gridlines=True,figsize=(7,5))
 </script></div>
-  <h2>Your Field for Experiments</h2>
-    <p>Type your own SageMath code lines below and click “Evaluate”.</p> 
-<div class="compute"><script type="text/x-sage">
+   <h2>Your Experiments</h2>
+    <p>Type your own SageMath code lines below and click the $\mathbb{evaluate}$ button.</p>
+<div class='compute'><script type='text/x-sage'>
 @interact
 def _(n=[36,33,..6],m=[7,6,..,2]):
     f(t,i)=(1+sin(n*t))*cos(n*t)+i; g(t,i)=.5*cos(n*t)+i
@@ -63,16 +63,18 @@ def _(n=[36,33,..6],m=[7,6,..,2]):
            for j in [1..m]])
     p.show(axes=False,figsize=7)
 </script></div><br/>
-<div class="compute"><script type="text/x-sage">
+  <p>This code cell was evaluated automatically.</p>
+<div id='cell2'><script type='text/x-sage'>
 @interact
 def _(marker=['alpha','beta','gamma','delta','epsilon'],
-      color=['red','orange','yellow','green','cyan','blue','purple']):
+      color=['red','orange','yellow','green',
+             'cyan','blue','purple']):
     m=r'$\%s$'%marker
     p=plot(cos(x),(x,0,10),plot_points=50,
            linestyle='',color=color,marker=m)
-    p.show(figsize=(8,5),gridlines=True)
+    p.show(figsize=(7,5),gridlines=True)
 </script></div><br/>
-<div class="compute"><script type="text/x-sage">
+<div class='compute'><script type='text/x-sage'>
 var('u,v')
 x=(2+cos(v/2)*sin(u)-sin(v/2)*sin(4*u))*cos(v)
 y=(2+cos(v/2)*sin(u)-sin(v/2)*sin(4*u))*sin(v)
@@ -82,8 +84,8 @@ sum([parametric_plot3d([2*i*x,2*i*y,z],
                        mesh=True,frame=False,color='#ff3636') 
      for i in [1..3]])
 </script></div>       
-  <h2>Try Python Modules</h2>
-<div class="compute"><script type="text/x-sage">
+  <h2>Python Modules</h2>
+<div class='compute'><script type='text/x-sage'>
 import numpy,pandas
 style_dict={'font-size':'150%','text-shadow':'#aaa 2px 2px 2px'}
 head_styler=(('color','slategray'),('font-size','200%'),
@@ -94,18 +96,18 @@ df=pandas.DataFrame(numpy.random.randn(8,6),index=index,columns=columns)
 df.style.set_properties(**style_dict).background_gradient(cmap='Pastel1')\
 .set_table_styles([dict(selector='th',props=head_styler)])
 </script></div>     
-  <h2>Try Other Languages (R, HTML, ...)</h2>
-<div class="compute"><script type="text/x-sage">
+  <h2>Other Languages (R, HTML, ...)</h2>
+<div class='compute'><script type='text/x-sage'>
 %%r
 A<-matrix(sample.int(100,size=3*3,replace=T),
           nrow=3,ncol=3)
 print(A); print(t(A)); print(solve(A))
 cat("\n"); print(det(A)); qr(A)
 </script></div>
-  <p>Click “Evaluate” twice. Use in HTML documents with &#60;/script&#62; in the end.</p>
-<div class="compute"><script type="text/x-sage">
+    <p>Click $\mathbb{evaluate}$ twice. Use in HTML documents with &#60;/script&#62; in the end.</p>
+<div class='compute'><script type='text/x-sage'>
 %%html
-<style>@import url('https://fonts.googleapis.com/css?family=Monoton');
+<style>@import 'https://fonts.googleapis.com/css?family=Monoton';
 svg {background-color:lavender;} 
 text {fill:#3636ff; font-family:Monoton; 
       font-size:130%; text-shadow:3px 3px 3px slategray;} 
