@@ -125,7 +125,7 @@ cat(zp==ze); c(z,zp,ze)
 <style>
 @import url('https://fonts.googleapis.com/css?family=Sancreek');
 .axis text,.bar text {fill:#3636ff; font-family:Sancreek; 
-                       font-size:90%; text-shadow:3px 3px 3px #aaa;}
+                      font-size:90%; text-shadow:3px 3px 3px #aaa;}
 .bar rect {fill:#3636ff; opacity:.5;}
 </style>
 <svg id='svg1' width='750' height='350' 
@@ -157,7 +157,7 @@ bar.append('text').attr('text-anchor','middle')
    .attr('x',(x(bins[0].x1)-x(bins[0].x0))/2);
 g.append('g').attr('class','axis axis--x')
  .call(d3.axisBottom(x))
- .attr("transform", "translate(0," + height + ")"); 
+ .attr('transform','translate(0,'+height+')'); 
 g.append('text').attr('y',5)
  .text('An Example of D3 Histograms');
 </script></div> 
