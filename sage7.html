@@ -139,8 +139,8 @@ var data=d3.range(3000).map(d3.randomBates(5)),
     formatCount=d3.format(',.0f');
 var svg=d3.select('#svg1'),
     m=30,margin={top:m,right:m,bottom:m,left:m}, 
-    width=+svg.attr('width')-margin.left-margin.right-2,
-    height=+svg.attr('height')-margin.top-margin.bottom-2,
+    width=+svg.attr('width')-margin.left-margin.right,
+    height=+svg.attr('height')-margin.top-margin.bottom,
     tr='translate('+margin.left+','+margin.top+')',
     g=svg.append('g').attr('transform',tr);
 var x=d3.scaleLinear().rangeRound([0,width]);
@@ -152,8 +152,8 @@ var bar=g.selectAll('.bar').data(bins).enter()
          .append('g').attr('class','bar')
          .attr('transform',function(d){
              return 'translate('+x(d.x0)+','+y(d.length)+')';});
-bar.append('rect').attr('x',1)
-   .attr('width',x(bins[0].x1)-x(bins[0].x0)-1)
+bar.append('rect').attr('x',0)
+   .attr('width',x(bins[0].x1)-x(bins[0].x0)-2)
    .attr('height',function(d){return height-y(d.length);});
 bar.append('text').attr('text-anchor','middle')
    .text(function(d){return formatCount(d.length);})
