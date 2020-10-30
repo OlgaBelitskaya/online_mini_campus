@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width'>
-    <title>✒️SageMath_Part11</title>
+    <title>✒️SageMath_Part12</title>
     <script src='https://sagecell.sagemath.org/static/embedded_sagecell.js'></script>
     <script>$(function () {
     sagecell.makeSagecell({inputLocation:'#cell1',evalButtonText:'activate',
@@ -23,7 +23,7 @@
   body (margin:5px 5px5px 25px}
   </style>  
   <body>
-  <h1>&#x1F4D1; &nbsp;SageMath Online Mini Campus. Part 11</h1>
+  <h1>&#x1F4D1; &nbsp;SageMath Online Mini Campus. Part 12</h1>
 <a href='https://olgabelitskaya.github.io/README.html'>&#x1F300; &nbsp; Home Page &nbsp; &nbsp;</a> 
 <a href='https://olgabelitskaya.github.io/sage2.html'>&#x1F300; &nbsp; Next &nbsp; &nbsp;</a><br/>
 <a href='https://www.instagram.com/olga.belitskaya/'>&#x1F300; &nbsp; Instagram Posts &nbsp; &nbsp;</a>     
@@ -72,7 +72,8 @@ def _(Graph=['Petersen','Moebius Kantor','Dodecahedral',
 i=CDF.gen(); N=500 
 z=[zeta(0.1*(5+n*i)) for n in range(N)]
 sum([line([(z[n].real(),z[n].imag()),
-           (z[n+1].real(),z[n+1].imag())],gridlines=True,
+           (z[n+1].real(),z[n+1].imag())],
+          gridlines=True,
           color=colormaps.hsv(abs(255-n))[:3]) 
      for n in range(N-1)]).show(figsize=(7,5))
 </script></div><br/>
@@ -117,14 +118,14 @@ rownames(ip)<-NULL; ip
 <div class='compute'><script type='text/x-sage'>
 %%html
 <style>
-@import url('https://fonts.googleapis.com/css?family=Ewert');
+@import 'https://fonts.googleapis.com/css?family=Ewert&effect=3d';
 </style>
-<button style="background-color:#3636ff; color:#fff; 
-               font-family:Ewert; font-size:160%;" 
-type="button" 
-onclick="document.getElementById('demo').innerHTML=Date()">
+<button style='background-color:#3636ff; color:#fff; 
+               font-family:Ewert; font-size:160%;' 
+type='button' 
+onclick='document.getElementById("demo").innerHTML=Date()'>
 Click to Display Date and Time</button>
-<p id='demo'></p>
+<p id='demo' class='font-effect-3d' style='color:#3636ff;'></p>
 </script></div>
   </body>
 </html>
