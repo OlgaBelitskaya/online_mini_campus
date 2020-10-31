@@ -63,7 +63,7 @@ def _(x=[1..10],y=[1..10],z=[1..10]):
 <div class='compute'><script type='text/x-sage'>
 @interact
 def _(N=[20,25,..,40],M=[20,40,..,100]):
-    f(l,k)=[l*sin(pi*k/M)+sin(2*pi*k/M),
+    f(l,k)=[l*sin(pi*k/M)+sin(2*pi*k/M),\
             -l*(1+cos(pi*k/M)+cos(2*pi*k/M))]
     L1=[f(j,i) for j in [1..N] for i in range(-2*M,2*M+1)]
     L2=[f(j,i) for i in range(-2*M,2*M+1) for j in [1..N]]
@@ -123,17 +123,17 @@ round(eigen(A)$vectors)
 <div class='compute'><script type='text/x-sage'>
 %%html
 <script src='https://d3js.org/d3.v4.min.js'/>
-<svg id='svg1' width=100px height=100px/><script>
+<svg id='svg1' width=150px height=150px/><script>
 var c1='#ff3636',c2='#3636ff'; var n=10000;
 var svg=d3.select('#svg1');
 d3.select('#svg1').transition().duration(n)
-  .styleTween("background-color",
+  .styleTween('background-color',
               function(){return d3.interpolate(c1,c2)});
-d3.select("svg").append("circle")
-  .attr("cx",50).attr("cy",50).attr("r",35)
+d3.select('#svg1').append('circle')
+  .attr('cx','50%').attr('cy','50%').attr('r',35)
   .transition().duration(n)
-  .styleTween("fill",
-              function(){return d3.interpolate(c2,c1)});          
+  .styleTween('fill',
+              function(){return d3.interpolate(c2,c1)});         
 </script></div>
   </body>
 </html>
