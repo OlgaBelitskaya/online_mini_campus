@@ -38,10 +38,10 @@
 def _(a=[2,3,4],b=[3,4,5],c=[1,2,3]):
     A=([a,1],[1,a+1]); B=(b,b+1); C=(c,c+4)
     s='Interactive Linear Programming Problem'
-    P=InteractiveLPProblem(A,B,C,["x","y"],
-                           problem_type="max",
-                           constraint_type="<=",
-                           variable_type=">=")
+    P=InteractiveLPProblem(A,B,C,['x','y'],
+                           problem_type='max',
+                           constraint_type='<=',
+                           variable_type='>=')
     pretty_print(s,fontsize=15)
     pretty_print((P.standard_form(),
                       P.optimal_solution()),
@@ -54,10 +54,10 @@ def _(a=[2,3,4],b=[3,4,5],c=[1,2,3]):
 def _(a=[2,3,4],b=[3,4,5],c=[1,2,3]):
     A=([a,1],[1,a+1]); B=(b,b+1); C=(c,c+4)
     s='Interactive Linear Programming Problem'
-    P=InteractiveLPProblem(A,B,C,["x","y"],
-                           problem_type="max",
-                           constraint_type="<=",
-                           variable_type=">=")
+    P=InteractiveLPProblem(A,B,C,['x','y'],
+                           problem_type='max',
+                           constraint_type='<=',
+                           variable_type='>=')
     pretty_print(s,fontsize=15)
     pretty_print((P.standard_form(),
                       P.optimal_solution()),
@@ -76,8 +76,9 @@ def v(k):
 def col(i,cm): return colormaps[cm](55*i)[:3]
 p=sum([Polyhedron(vertices=v(1)[i]).render_solid(opacity=.5,
        color=col(i,'hsv')) for i in [0..3]])
-c=cube((.5,.5,0),.5,opacity=.5,color=col(4,'hsv'))
-(p+c).show(frame=False)
+c1=cube((.5,.5,0),.5,opacity=.5,color=col(4,'hsv'))
+c2=cube((.5,.5,0),2,opacity=.1,color=col(2,'hsv'))
+(p+c1+c2).show(frame=False)
 </script></div><br/>
   <p>This code cell was evaluated automatically.</p>
 <div id='cell2'><script type='text/x-sage'>
@@ -124,9 +125,9 @@ g.show(title='NYC School Districts',
 library(stats) # f1=2^x, f2=4*x-x^2, x1=0, x2=4
 f<-function(x) {2^x-(4*x-x^2)}
 print(integrate(f,lower=0,upper=4))
-svg(filename="Rplots.svg",width=7,height=7,pointsize=12,
-    onefile=T,family="sans",bg="white",
-    antialias=c("default","none","gray","subpixel"))
+svg(filename='Rplots.svg',width=7,height=7,pointsize=12,
+    onefile=T,family='times',bg='white',
+    antialias=c('default','none','gray','subpixel'))
 n<-100; x<-seq(0,4,len=n)
 xy1<-data.frame(x=x,y=2^x)
 xy2<-data.frame(x=x,y=4*x-x^2)
@@ -143,15 +144,15 @@ grid(col='gray'); dev.off()
 <div class='compute'><script type='text/x-sage'>
 %%html
 <style>
-@import url('https://fonts.googleapis.com/css?family=Ewert');
+@import 'https://fonts.googleapis.com/css?family=Ewert';
 </style>
-<button style="background-color:silver; color:#3636ff; 
-               font-family:Ewert; font-size:120%;" 
-type="button" 
-onclick="document.getElementById('demo').innerHTML=Math.random()">
+<button style='background-color:silver; color:#3636ff; 
+               font-family:Ewert; font-size:120%;'
+type='button' 
+onclick='document.getElementById("demo").innerHTML=Math.random()'>
 Click to Display a Random Number in the Interval [0;1]</button>
-<p id="demo"style="color:#3636ff; 
-                   font-family:Ewert; font-size:200%;"></p>
+<p id='demo' style='color:#3636ff; 
+                   font-family:Ewert; font-size:200%;'></p>
 </script></div>
   </body>
 </html>
