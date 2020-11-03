@@ -37,7 +37,7 @@
 @interact
 def _(axis=['x','y','z'],
       cm=['bwr','jet','cool','hsv']):
-    var('u,phi'); curve=(1+u^2/4,1-u^3/8,u)
+    var('u,phi'); curve=(1+u^2/8,1-u^3/128,u)
     def cf(u,phi): return cos(2*phi+u)^2
     p=revolution_plot3d(curve,(u,-4,8),(phi,0,2*pi),
                         parallel_axis=axis,
@@ -49,16 +49,16 @@ def _(axis=['x','y','z'],
 @interact
 def _(axis=['x','y','z'],
       cm=['bwr','jet','cool','hsv']):
-    var('u,phi'); curve=(1+u^2/4,1-u^3/8,u)
+    var('u,phi'); curve=(1+u^2/8,1-u^3/128,u)
     def cf(u,phi): return cos(2*phi+u)^2
     p=revolution_plot3d(curve,(u,-4,8),(phi,0,2*pi),
                         parallel_axis=axis,
                         color=(cf,colormaps[cm]))
     p.show(frame=False)
 </script></div>
-  <h2>Your Field for Experiments</h2>
-    <p>Type your own SageMath code lines below and click “Evaluate”.</p>     
-<div class="compute"><script type="text/x-sage">
+   <h2>Your Experiments</h2>
+    <p>Type your own SageMath code lines below and click the $\mathbb{evaluate}$ button.</p>
+<div class='compute'><script type='text/x-sage'>
 @interact
 def _(layout=['spring','circular'],n=[3,4,5]):
     dg=digraphs.Kautz(n,2)
@@ -66,7 +66,8 @@ def _(layout=['spring','circular'],n=[3,4,5]):
             layout=layout,edge_style='-.',
             color_by_label=True,figsize=(7,7))
 </script></div><br/>
-<div class="compute"><script type="text/x-sage">
+  <p>This code cell was evaluated automatically.</p>
+<div id='cell2'><script type='text/x-sage'>
 @interact
 def _(N=[1,2,3]):
     def rho(phi):
