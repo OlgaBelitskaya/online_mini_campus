@@ -35,46 +35,54 @@
     <p>Click the $\mathbb{activate}$ button below to display an interactive example.</p>
 <pre class='preactive'><code>
 @interact
-def _(A='a,3,2,c,1,ф,⎈,D',
-      B='ф,7,a,⎈,2,1,B,θ',
-      C='8,N,a,θ,4,P,⎈,r'):
+def _(A='a,3,2,c,1,ф,⎈,D,p',
+      B='ф,7,a,⎈,2,1,B,θ,S',
+      C='8,N,a,θ,4,P,⎈,r,p'):
     S=[sorted(list(el.split(','))) 
        for el in [A,B,C]]
-    s=r'&#60;left style="color:%s; font-size:20px;">'
-    s1=r'$A \cap B = %s$</left>'
-    s2=r'$A \cap C = %s$</left>'
-    s3=r'$B \cap C = %s$</left>'
-    s4=r'$A \cap B \cap C = %s$</left>'
+    st=r'&#60;left style=%s>'%'color:%s'
+    s1=r'$\large{A \cap B = %s}$'
+    s2=r'$\large{A \cap C = %s}$'
+    s3=r'$\large{B \cap C = %s}$'
+    s4=r'$\large{A \cap B \cap C = %s}$'
     AB=list(set(S[0])&set(S[1]))
     AC=list(set(S[0])&set(S[2]))
     BC=list(set(S[1])&set(S[2])) 
     ABC=list(set(AB)&set(S[2]))
-    pretty_print(html(s%'#ff3636'+s1%('{'+','.join(AB)+'}')))
-    pretty_print(html(s%'#36ff36'+s2%('{'+','.join(AC)+'}')))
-    pretty_print(html(s%'#3636ff'+s3%('{'+','.join(BC)+'}')))
-    pretty_print(html(s%'#ff36ff'+s4%('{'+','.join(ABC)+'}')))
+    pretty_print(html(st%'#ff3636'+\
+                      s1%('{'+','.join(AB)+'}')))
+    pretty_print(html(st%'#36ff36'+\
+                      s2%('{'+','.join(AC)+'}')))
+    pretty_print(html(st%'#3636ff'+\
+                      s3%('{'+','.join(BC)+'}')))
+    pretty_print(html(st%'#ff36ff'+\
+                      s4%('{'+','.join(ABC)+'}')))
 
 </code></pre><br/>
 <div id='cell1'><script type='text/x-sage'>
 @interact
-def _(A='a,3,2,c,1,ф,⎈,D',
-      B='ф,7,a,⎈,2,1,B,θ',
-      C='8,N,a,θ,4,P,⎈,r'):
+def _(A='a,3,2,c,1,ф,⎈,D,p',
+      B='ф,7,a,⎈,2,1,B,θ,S',
+      C='8,N,a,θ,4,P,⎈,r,p'):
     S=[sorted(list(el.split(','))) 
        for el in [A,B,C]]
-    s=r'<left style="color:%s; font-size:20px;">'
-    s1=r'$A \cap B = %s$</left>'
-    s2=r'$A \cap C = %s$</left>'
-    s3=r'$B \cap C = %s$</left>'
-    s4=r'$A \cap B \cap C = %s$</left>'
+    st=r'<left style=%s>'%'color:%s'
+    s1=r'$\large{A \cap B = %s}$'
+    s2=r'$\large{A \cap C = %s}$'
+    s3=r'$\large{B \cap C = %s}$'
+    s4=r'$\large{A \cap B \cap C = %s}$'
     AB=list(set(S[0])&set(S[1]))
     AC=list(set(S[0])&set(S[2]))
     BC=list(set(S[1])&set(S[2])) 
     ABC=list(set(AB)&set(S[2]))
-    pretty_print(html(s%'#ff3636'+s1%('{'+','.join(AB)+'}')))
-    pretty_print(html(s%'#36ff36'+s2%('{'+','.join(AC)+'}')))
-    pretty_print(html(s%'#3636ff'+s3%('{'+','.join(BC)+'}')))
-    pretty_print(html(s%'#ff36ff'+s4%('{'+','.join(ABC)+'}')))
+    pretty_print(html(st%'#ff3636'+\
+                      s1%('{'+','.join(AB)+'}')))
+    pretty_print(html(st%'#36ff36'+\
+                      s2%('{'+','.join(AC)+'}')))
+    pretty_print(html(st%'#3636ff'+\
+                      s3%('{'+','.join(BC)+'}')))
+    pretty_print(html(st%'#ff36ff'+\
+                      s4%('{'+','.join(ABC)+'}')))
 </script></div>
    <h2>Your Experiments</h2>
     <p>Type your own SageMath code lines below and click the $\mathbb{evaluate}$ button.</p>
@@ -165,19 +173,19 @@ pylab.suptitle(s); pylab.show()
   <h2>Other Languages (R, HTML, ...)</h2>
 <div class='compute'><script type='text/x-sage'>
 %%r
-svg(filename="Rplots.svg",widt=5,height=5,pointsize=12,
-    onefile=TRUE,family="times",bg="ghostwhite",
-    antialias=c("default","none","gray","subpixel"))
+svg(filename='Rplots.svg',widt=5,height=5,pointsize=12,
+    onefile=TRUE,family='times',bg='ghostwhite',
+    antialias=c('default','none','gray','subpixel'))
 model<-lm(weight~height,data=women)
-plot(women$height,women$weight,col="violet",pch=10)
-abline(model,col="purple"); grid(); dev.off()
+plot(women$height,women$weight,col='violet',pch=10)
+abline(model,col='purple'); grid(); dev.off()
 </script></div><br/>    
 <div class='compute'><script type='text/x-sage'>
 %%html
 <style>
 @import 'https://fonts.googleapis.com/css?family=Miss Fajardose';
 </style>
-<input type='number' id='temp' value='86' width=200
+<input type='number' id='inputtemp' value='86' width=200
        style='font-family:Miss Fajardose; font-size:200%; 
               background-color:silver; color:#3636ff; 
               text-align:center; width:200px; border:double #ff3636;'>
@@ -195,7 +203,7 @@ a Fahrenheit temperature to Celsius</p>
 <div class='compute'><script type='text/x-sage'>
 %%javascript
 function f2c() {
-    var f=document.getElementById('temp').value;
+    var f=document.getElementById('inputtemp').value;
     return Math.round((5/9)*(f-32)) };
 document.getElementById('outtemp').innerHTML=f2c();
 </script></div>     
