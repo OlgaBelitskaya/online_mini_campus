@@ -162,15 +162,18 @@ grid(); dev.off()
 </style>
 <p id='change_font' class='font-effect-3d' onclick='setFont()'>
 Click to change the font</p>
+<input type='color' id='set_color' value='#36ff36' 
+       style='padding-left:20px'>
 <p id='change_color' class='font-effect-3d' 
-   onclick='setColor(this,"darkgreen")'>
+   onclick='setColor()'>
 Click to change the color</p>
 <script>
 function setFont()
     {doc=document.getElementById('change_font');
      doc.style='font-family:Ewert; font-size:210%';}
-function setColor(element,c)
-    {doc=document.getElementById('change_color')
+function setColor()
+    {var c=document.getElementById('set_color').value;
+     doc=document.getElementById('change_color')
      doc.style='font-size:300%'; doc.style.color=c;}
 </script></div>
   </body>
