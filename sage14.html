@@ -12,6 +12,7 @@
                            autoeval:true});
     sagecell.makeSagecell({inputLocation:'div.compute',evalButtonText:'evaluate'}); });
     </script>
+    <script src='https://d3js.org/d3.v4.min.js'></script>
   </head>
   <style>
   @import url('https://fonts.googleapis.com/css?family=Akronim');
@@ -25,7 +26,7 @@
   <body>
   <h1>&#x1F4D1; &nbsp;SageMath Online Mini Campus. Part 14</h1>
 <a href='https://olgabelitskaya.github.io/README.html'>&#x1F300; &nbsp; Home Page &nbsp; &nbsp;</a> 
-<a href='https://olgabelitskaya.github.io/sage2.html'>&#x1F300; &nbsp; Next &nbsp; &nbsp;</a><br/>
+<a href='https://olgabelitskaya.github.io/sage15.html'>&#x1F300; &nbsp; Next &nbsp; &nbsp;</a><br/>
 <a href='https://www.instagram.com/olga.belitskaya/'>&#x1F300; &nbsp; Instagram Posts &nbsp; &nbsp;</a>     
 <a href='https://www.pinterest.ru/olga_belitskaya/code-style/'>&#x1F300; &nbsp; Pinterest Posts</a>
     <p>The set of interactive pages with the following structure:</p>
@@ -119,10 +120,9 @@ print(A); cat('\n')
 print(eigen(A)$values); cat('\n')
 round(eigen(A)$vectors)
 </script></div>
-    <p>Click $\mathbb{evaluate}$ twice. Use in HTML documents with &#60;/script&#62; in the end.</p>
+<p>&#60;script src='https://d3js.org/d3.v4.min.js'>&#60;/script> was added in the page head.</p>
 <div class='compute'><script type='text/x-sage'>
 %%html
-<script src='https://d3js.org/d3.v4.min.js'/>
 <svg id='svg1' width=150px height=150px/><script>
 var c1='#ff3636',c2='#3636ff'; var n=10000;
 var svg=d3.select('#svg1');

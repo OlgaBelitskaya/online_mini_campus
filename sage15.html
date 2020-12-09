@@ -12,6 +12,8 @@
                            autoeval:true});
     sagecell.makeSagecell({inputLocation:'div.compute',evalButtonText:'evaluate'}); });
     </script>
+    <script src='https://d3js.org/d3.v3.min.js'></script>
+    <script src='https://d3js.org/topojson.v0.min.js'></script>
   </head>
   <style>
   @import url('https://fonts.googleapis.com/css?family=Akronim');
@@ -25,7 +27,7 @@
   <body>
   <h1>&#x1F4D1; &nbsp;SageMath Online Mini Campus. Part 15</h1>
 <a href='https://olgabelitskaya.github.io/README.html'>&#x1F300; &nbsp; Home Page &nbsp; &nbsp;</a> 
-<a href='https://olgabelitskaya.github.io/sage2.html'>&#x1F300; &nbsp; Next &nbsp; &nbsp;</a><br/>
+<a href='https://olgabelitskaya.github.io/sage16.html'>&#x1F300; &nbsp; Next &nbsp; &nbsp;</a><br/>
 <a href='https://www.instagram.com/olga.belitskaya/'>&#x1F300; &nbsp; Instagram Posts &nbsp; &nbsp;</a>     
 <a href='https://www.pinterest.ru/olga_belitskaya/code-style/'>&#x1F300; &nbsp; Pinterest Posts</a>
     <p>The set of interactive pages with the following structure:</p>
@@ -140,19 +142,16 @@ y<-structure(c(a=1,b=2,c=3,d=4,e=5,f=6,g=7,h=8),
              dtype='vector',shape=8)
 attributes(y)
 </script></div>
-    <p>Click $\mathbb{evaluate}$ twice. Use in HTML documents with &#60;/script&#62; in the end.</p>
+<p>&#60;script src='https://d3js.org/d3.v3.min.js'>&#60;/script><br/>
+&#60;script src='https://d3js.org/topojson.v0.min.js'>&#60;/script> was added in the page head.</p>
 <div class='compute'><script type='text/x-sage'>
 %%html
-<style>
-#svg1 {background-color:darkblue;}
+<style>#svg1 {background-color:midnightblue;}
 .land {fill:#3636ff; stroke:silver;}
 .countries {fill:none; stroke:silver;}
-</style>
-<script src='https://d3js.org/d3.v3.min.js'/>
-<script src='https://d3js.org/topojson.v0.min.js'/>
-<svg id='svg1' width=900 height=470/>
+</style><svg id='svg1' width='930px' height='470px'/>
 <script type='text/javascript'>
-var projection=d3.geo.equirectangular().translate([430,250]);
+var projection=d3.geo.equirectangular().translate([450,250]);
 var svg=d3.select('#svg1'),g=svg.append('g');
 var path=d3.geo.path().projection(projection);
 var url1='https://raw.githubusercontent.com/n1n9-jp/',
@@ -165,7 +164,7 @@ d3.json(url1.concat(url2).concat(file),
              .enter().append('path').attr('d',path);
             svg.attr('class','countries').selectAll('countries')
                .data([topojson.object(world,world.objects.countries)])
-               .enter().append('path').attr('d',path);});    
+               .enter().append('path').attr('d',path);});   
 </script></div>
   </body>
 </html>
